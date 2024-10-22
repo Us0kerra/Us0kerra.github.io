@@ -3,6 +3,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color:chocolate ;
 }
 
 
@@ -16,6 +17,11 @@ body{
     position: relative;
 }
 
+
+.attacker{
+
+    cursor: pointer;
+}
 
 img{
     position: absolute;
@@ -46,10 +52,6 @@ img{
     top: 140px
 }
 
-.atk{
-
-    cursor: pointer;
-}
 
 
 #atk_1{
@@ -86,7 +88,7 @@ img{
     top:670px;
 }
 
-@keyframes moveBall {
+@keyframes moveObject {
     from {
         transform: translate(0, 0);
     }
