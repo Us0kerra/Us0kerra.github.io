@@ -1,0 +1,103 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:chocolate ;
+}
+
+
+
+#field{
+    width: 1500px;
+    border: 3px solid black;
+    height: 810px;
+    background-image: url("../images/field.png");
+    background-color: white;
+    position: relative;
+}
+
+
+.attacker{
+
+    cursor: pointer;
+}
+
+img{
+    position: absolute;
+}
+
+#def_1{
+    left: 519px;
+    top: 473px;
+}
+
+#def_2{
+    left: 905px;
+    top: 473px
+}
+
+#def_3{
+    left: 978px;
+    top: 140px
+}
+
+#def_4{
+    left: 452px;
+    top: 140px;
+}
+
+#def_5{
+    left: 712px;
+    top: 140px
+}
+
+
+
+#atk_1{
+    left:45px;
+    top:75px;   
+}
+
+
+#atk_2{
+    left:210px;
+    top:425px;   
+}
+
+
+#atk_3{
+    left:712px;
+    top:670px;   
+}
+
+
+#atk_4{
+    left:1200px;
+    top:425px;   
+}
+
+
+#atk_5{
+    left:1370px;
+    top:75px;   
+}
+#ball{
+    width: 45px;
+    left: 770px;
+    top:670px;
+}
+
+@keyframes moveObject {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(var(--end-x), var(--end-y));
+    }
+}
+h1{
+    position: absolute;
+    text-align: center;
+    top: 0px;
+}

@@ -96,3 +96,8 @@ img{
         transform: translate(var(--end-x), var(--end-y));
     }
 }
+h1{
+    position: absolute;
+    text-align: center;
+    top: 0px;
+}
