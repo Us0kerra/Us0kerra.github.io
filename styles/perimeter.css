@@ -1,9 +1,5 @@
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    background-color:chocolate ;
 }
 
 
@@ -15,6 +11,7 @@ body{
     background-image: url("../images/field.png");
     background-color: white;
     position: relative;
+    margin: auto;
 }
 
 
@@ -96,8 +93,22 @@ img{
         transform: translate(var(--end-x), var(--end-y));
     }
 }
+
+@keyframes postMoveObject {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(var(--end-x), var(--end-y));
+    }
+}
+
 h1{
-    position: absolute;
     text-align: center;
-    top: 0px;
+}
+
+button{
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }

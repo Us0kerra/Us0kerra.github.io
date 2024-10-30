@@ -1,9 +1,5 @@
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    background-color:chocolate ;
 }
 
 
@@ -15,8 +11,13 @@ body{
     background-image: url("../images/field.png");
     background-color: white;
     position: relative;
+    margin: auto;
 }
-
+button{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
 
 .attacker{
 
@@ -97,7 +98,5 @@ img{
     }
 }
 h1{
-    position: absolute;
     text-align: center;
-    top: 0px;
 }

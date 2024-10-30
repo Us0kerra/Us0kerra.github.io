@@ -2,7 +2,6 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color:chocolate ;
 }
 h1{
     text-align: center;
@@ -12,17 +11,16 @@ h2{
 }
 #choice{
     display: flex;
-    justify-content: center;
-    width: 80%;
-    background-color:brown;
+    justify-content: space-between;
+    width: 40%;
     margin: auto;
 }
-a{
-    font-size: 30px;
-}
 button{
-    width: 40%;
-    height: 20%;
+    font-size: 30px;
+    width: auto;
+    height: 200px;
+    border-radius: 15%;
+    color: red;
 }
 #choice > button{
     margin:auto
