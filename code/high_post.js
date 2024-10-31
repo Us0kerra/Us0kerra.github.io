@@ -5,18 +5,6 @@ const atk1 = document.getElementById("atk_1");
 const atk5 = document.getElementById("atk_5");
 
 
-{/* <img src="images/models/defender.png" class="defender" id="def_1" data-x="520" data-y="475">
-        <img src="images/models/defender.png" class="defender" id="def_2" data-x="905" data-y="475">
-        <img src="images/models/defender.png" class="defender" id="def_3" data-x="975" data-y="140">
-        <img src="images/models/defender.png" class="defender" id="def_4" data-x="450" data-y="140">
-        <img src="images/models/defender.png" class="defender" id="def_5" data-x="710" data-y = "140"></img> */}
-
-{/* <img src="images/models/attack.png" class="attacker" id="atk_1" data-x="525" data-y="90">
-        <img src="images/models/attack.png" class="attacker" id="atk_2" data-x="210" data-y="425">
-        <img src="images/models/attack.png" class="attacker" id="atk_3" data-x="710" data-y="670">
-        <img src="images/models/attack.png" class="attacker" id="atk_4" data-x="1200" data-y="425">
-        <img src="images/models/attack.png" class="attacker" id="atk_5" data-x="710" data-y="420">
-         */}
 function scenario(attackerX,attackerY,currentX,currentY){
     var result = new Map()
     //перемещение 3->5 и 5->3
@@ -91,7 +79,6 @@ attackers.forEach(attacker => {
         // Сброс анимации мяча после завершения
         ball.addEventListener('animationend', () => {
             ball.style.animation = '';
-            // ball.style.transform = '';
             ball.style.left = `${attackerX}px`;
             ball.style.top = `${attackerY}px`;
         }, { once: true });
