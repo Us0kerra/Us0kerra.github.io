@@ -11,17 +11,15 @@ h2{
 }
 #choice{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 40%;
     margin: auto;
+    gap: 100px
 }
 button{
     font-size: 30px;
-    width: auto;
+    width: 200px;
     height: 200px;
     border-radius: 15%;
     color: red;
-}
-#choice > button{
-    margin:auto
 }

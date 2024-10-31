@@ -27,7 +27,7 @@ function scenario(attackerX,attackerY,currentX,currentY){
     else if (attackerX == 710 && attackerY == 670 && currentX == 1200 && currentY == 425) {result.set("def1X",520).set("def1Y",475).set("def2X",905).set("def2Y",475).set("def3X",975).set("def3Y",140).set("def4X",450).set("def4Y",140).set("def5X",710).set("def5Y",140).set("atk1X",525).set("atk1Y",90).set("atk5X",710,).set("atk5Y",420);}
     // перемещение 4->5 и 5->4
     else if (attackerX == 880 && attackerY == 385 && currentX == 1200 && currentY == 425) {result.set("def1X",820).set("def1Y",480).set("def2X",1105).set("def2Y",360).set("def3X",975).set("def3Y",140).set("def4X",650).set("def4Y",140).set("def5X",870).set("def5Y",300).set("atk1X",915).set("atk1Y",90).set("atk5X",880,).set("atk5Y",385);}
-    else if (attackerX == 1200 && attackerY == 425 && currentX == 880 && currentY == 385) {result.set("def1X",760).set("def1Y",515).set("def2X",1105).set("def2Y",360).set("def3X",1105).set("def3Y",115).set("def4X",555).set("def4Y",140).set("def5X",815).set("def5Y",120).set("atk1X",915).set("atk1Y",90).set("atk5X",880).set("atk5Y",420);}
+    else if (attackerX == 1200 && attackerY == 425 && currentX == 880 && currentY == 385) {result.set("def1X",760).set("def1Y",515).set("def2X",1105).set("def2Y",360).set("def3X",1105).set("def3Y",115).set("def4X",555).set("def4Y",140).set("def5X",815).set("def5Y",120).set("atk1X",915).set("atk1Y",90).set("atk5X",880).set("atk5Y",385);}
     return result;
   }
 

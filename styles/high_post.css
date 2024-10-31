@@ -97,6 +97,7 @@ img{
         transform: translate(var(--end-x), var(--end-y));
     }
 }
+
 h1{
     text-align: center;
 }

@@ -40,8 +40,8 @@ function scenario(attackerX,attackerY,currentX,currentY){
   else if (attackerX == 45 && attackerY == 75 && currentX == 1200 && currentY == 425) {result.set("def1X",355).set("def1Y",335).set("def2X",695).set("def2Y",515).set("def3X",805).set("def3Y",130).set("def4X",175).set("def4Y",70).set("def5X",610).set("def5Y",125);}
   //else if (attackerX == 1200 && attackerY == 425 && currentX == 45 && currentY == 75) {result.set("def1X",760).set("def1Y",465).set("def2X",1105).set("def2Y",360).set("def3X",1095).set("def3Y",110).set("def4X",565).set("def4Y",135).set("def5X",815).set("def5Y",125);}
   // перемещение 4->2 и 2->4
-  else if (attackerX == 210 && attackerY == 425 && currentX == 1200 && currentY == 425) {result.set("def1X",320).set("def1Y",350).set("def2X",695).set("def2Y",520).set("def3X",905).set("def3Y",130).set("def4X",310).set("def4Y",330).set("def4_postX",300).set("def4_postY",120).set("def5X",610).set("def5Y",130);}
-  else if (attackerX == 1200 && attackerY == 425 && currentX == 210 && currentY == 425) {result.set("def1X",760).set("def1Y",525).set("def2X",1125).set("def2Y",360).set("def3X",1135).set("def3Y",340).set("def3_postX",1125).set("def3_postY",120).set("def4X",600).set("def4Y",155).set("def5X",805).set("def5Y",135);}
+  else if (attackerX == 210 && attackerY == 425 && currentX == 1200 && currentY == 425) {result.set("def1X",320).set("def1Y",350).set("def2X",695).set("def2Y",520).set("def3X",905).set("def3Y",130).set("def4X",330).set("def4Y",300).set("def4_postX",300).set("def4_postY",120).set("def5X",610).set("def5Y",130);}
+  else if (attackerX == 1200 && attackerY == 425 && currentX == 210 && currentY == 425) {result.set("def1X",760).set("def1Y",525).set("def2X",1105).set("def2Y",360).set("def3X",1135).set("def3Y",340).set("def3_postX",1125).set("def3_postY",120).set("def4X",600).set("def4Y",155).set("def5X",805).set("def5Y",135);}
   
   // перемещение 5->2 и 2->5
   //
@@ -69,23 +69,34 @@ attackers.forEach(attacker => {
         defenders.forEach((defender, index) => {
             const newX = direction.get(`def${index+1}X`);
             const newY = direction.get(`def${index+1}Y`);
-            defender.style.setProperty('--end-x', `${newX - defender.offsetLeft}px`);
-            defender.style.setProperty('--end-y', `${newY - defender.offsetTop}px`);
-            defender.style.animation = 'moveObject 0.7s forwards';
+            const postX = direction.get(`def${index+1}_postX`);
+            const postY = direction.get(`def${index+1}_postY`);
+            if (direction.get(`def${index+1}_postX`) !== void 0){
+            console.log(`$def${index+1} ${direction.get(`def${index+1}_postX`)} ${direction.get(`def${index+1}_postY`)}`);
+              defender.style.transition = "transform 0.6s ease";
+            }
+            
+            // defender.style.setProperty('--end-x', `${newX - defender.offsetLeft}px`);
+            // defender.style.setProperty('--end-y', `${newY - defender.offsetTop}px`);
+            defender.style.transform = `translate(${newX - defender.offsetLeft}px, ${newY - defender.offsetTop}px)`;
+            // defender.style.animation = 'moveObject 0.7s forwards';
 
-            defender.addEventListener('animationend',() => {
-              defender.style.left = `${newX}px`;
-              defender.style.top = `${newY}px`;
-              defender.style.animation = '';
-            }, {once: true});
+                  setTimeout(() => {
+                  defender.style.transition = "transform 1s ease";
+                  defender.style.transform = `translate(${postX - defender.offsetLeft}px, ${postY - defender.offsetTop}px)`;
+                    
+              }, 600); // 1000 мс - время первого шага
+            // defender.addEventListener('animationend',() => {
+            //   defender.style.left = `${newX}px`;
+            //   defender.style.top = `${newY}px`;
+            //   defender.style.animation = '';
+            // }, {once: true});
             
         });
 
         // defenders.forEach((defender,index) => {
         //     if (direction.get(`def${index+1}_postX`) != null){
         //       console.log(direction.get(`def${index+1}_postX`));
-        //       const newX = direction.get(`def${index+1}X`);
-        //       const newY = direction.get(`def${index+1}Y`);
 
         //       const postX = direction.get(`def${index+1}_postX`);
         //       const postY = direction.get(`def${index+1}_postY`);
@@ -94,18 +105,26 @@ attackers.forEach(attacker => {
         //       // defender.style.transform = `translate(${newX - defender.offsetLeft}px, ${newY - defender.offsetTop}px)`;
         //       // defender.style.transform = "";
 
+        //       defender.style.setProperty('--end-x', `${postX - defender.offsetLeft}px`);
+        //     defender.style.setProperty('--end-y', `${postY - defender.offsetTop}px`);
+
         //       // Второй шаг: перемещение защитника в новую координату
         //       setTimeout(() => {
-        //           defender.style.transform = `translate(${postX - newX}px, ${postY - newY}px)`;
+        //           defemder.style.animation = 'moveObject 0.7s forwards'
+        //           // defender.style.transform = `translate(${postX - newX}px, ${postY - newY}px)`;
+                    
         //       }, 1000); // 1000 мс - время первого шага
-        //         defender.setAttribute('data-x', `${postX}`);
-        //         defender.setAttribute('data-y', `${postY}`);
+        //         // defender.style.left = `${postX}px`;
+        //         // defender.style.top = `${postY}px`;
+        //         // defender.style.transform = '';
+                
+              
+        //       // defender.addEventListener('transformend',() => {
+        //       //   defender.style.left = `${postX}px`;
+        //       //   defender.style.top = `${postY}px`;
+        //       //   defender.style.transform = '';
+        //       // }, {once: true});
         //       }
-        //       defender.addEventListener('animationend',() => {
-        //         defender.style.left = `${postX}px`;
-        //         defender.style.top = `${postY}px`;
-        //         defender.style.animation = '';
-        //       }, {once: true});
         // });
 
         // Сброс анимации мяча после завершения

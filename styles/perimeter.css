@@ -22,30 +22,31 @@ body{
 
 img{
     position: absolute;
+    transition: transform 1s ease;
 }
 
 #def_1{
-    left: 519px;
-    top: 473px;
+    left: 520px;
+    top: 475px;
 }
 
 #def_2{
     left: 905px;
-    top: 473px
+    top: 475px
 }
 
 #def_3{
-    left: 978px;
+    left: 980px;
     top: 140px
 }
 
 #def_4{
-    left: 452px;
+    left: 450px;
     top: 140px;
 }
 
 #def_5{
-    left: 712px;
+    left: 710px;
     top: 140px
 }
 
@@ -86,15 +87,6 @@ img{
 }
 
 @keyframes moveObject {
-    from {
-        transform: translate(0, 0);
-    }
-    to {
-        transform: translate(var(--end-x), var(--end-y));
-    }
-}
-
-@keyframes postMoveObject {
     from {
         transform: translate(0, 0);
     }
